@@ -1,3 +1,4 @@
+import { RegType } from "src/enums/user.enum";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
@@ -26,4 +27,10 @@ export class User {
     default: '',
   })
   email: string;
+
+  @Column({
+    nullable: false,
+    default: RegType.CLIENT,
+  })
+  regType: RegType
 }
